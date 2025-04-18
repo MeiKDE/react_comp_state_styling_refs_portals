@@ -1,4 +1,4 @@
-export default function AddProject() {
+export default function Project() {
   const date = new Date();
   return (
     <section className="p-4">
