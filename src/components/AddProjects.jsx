@@ -47,7 +47,7 @@ export default function AddProjects({ onAddProject, projects, onSelectIndex }) {
                 {projects.map((project, index) => (
                   <li key={project.id} className="text-left">
                     <button
-                      className="px-4 py-2 text-xl bg-stone-700 text-white rounded-xl hover:bg-stone-600 w-full text-left"
+                      className="px-4 py-2 text-xl text-white rounded-xl hover:bg-stone-600 w-full text-left"
                       onClick={() => onClickProjectHandler(index)}
                     >
                       {project.title}
