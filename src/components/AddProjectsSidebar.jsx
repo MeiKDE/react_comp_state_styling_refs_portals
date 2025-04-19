@@ -1,7 +1,11 @@
 import { useRef } from "react";
 import ProjectModal from "./ProjectModal";
 
-export default function AddProjects({ onAddProject, projects, onSelectIndex }) {
+export default function AddProjectsSidebar({
+  onAddProject,
+  projects,
+  onSelectIndex,
+}) {
   const dialog = useRef();
   const handleReset = () => {
     dialog.current.close();
@@ -45,7 +49,10 @@ export default function AddProjects({ onAddProject, projects, onSelectIndex }) {
             {projects.length > 0 ? (
               <ul className="flex flex-col gap-4">
                 {projects.map((project, index) => (
-                  <li key={project.id} className="text-left">
+                  <li
+                    key={project.id || crypto.randomUUID()} // Fallback to random ID if id is not present
+                    className="text-left"
+                  >
                     <button
                       className="px-4 py-2 text-xl text-white rounded-xl hover:bg-stone-600 w-full text-left"
                       onClick={() => onClickProjectHandler(index)}

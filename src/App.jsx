@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Project from "./components/Project";
-import AddProjects from "./components/AddProjects";
+import AddProjectsSidebar from "./components/AddProjectsSidebar";
 import AddTask from "./components/AddTask";
-import Tasks from "./components/Tasks";
+import TasksList from "./components/TasksList";
 
 function App() {
   const date = new Date();
@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="flex space-x-4 flex-row gap-3">
       <section className="flex-3 border-2 border-pink-300 bg-gray-900">
-        <AddProjects
+        <AddProjectsSidebar
           onAddProject={handleAddProject}
           projects={projects}
           onSelectIndex={setSelectedIndex}
@@ -25,9 +25,9 @@ function App() {
       </section>
 
       <section className="flex-1 border-2 border-green-300">
-        <Project />
+        <Project project={projects[selectedIndex]} />
         <AddTask />
-        <Tasks />
+        <TasksList />
       </section>
     </div>
   );

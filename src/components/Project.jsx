@@ -1,4 +1,5 @@
-export default function Project() {
+export default function Project({ project }) {
+  console.log(project);
   const date = new Date();
   return (
     <section className="p-4">
@@ -12,14 +13,8 @@ export default function Project() {
       </div>
       <div className="w-full max-w-2xl px-6 mx-auto space-y-4">
         <p className="text-xl text-gray-500">{date.toLocaleDateString()}</p>
-
-        <p className="text-xl">
-          Learn React from the ground up and in great depth!
-        </p>
-
-        <p className="text-xl">
-          Start with the basics, finish with advanced knowledge.
-        </p>
+        <p className="text-xl">{project.title}</p>
+        <p className="text-xl">{project.description}</p>
       </div>
     </section>
   );

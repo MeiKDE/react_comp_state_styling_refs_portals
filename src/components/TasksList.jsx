@@ -1,4 +1,4 @@
-export default function Tasks() {
+export default function TasksList() {
   return (
     <section className="flex flex-col items-center justify-center min-h-screen">
       <div className="w-full max-w-2xl px-6">
