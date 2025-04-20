@@ -7,11 +7,17 @@ import TasksList from "./components/TasksList";
 function App() {
   const date = new Date();
   const [projects, setProjects] = useState([]);
+  const [tasks, setTasks] = useState([]);
   const [selectedIndex, setSelectedIndex] = useState(null);
 
   const handleAddProject = (project) => {
     setProjects((prevProjects) => [...prevProjects, project]);
     setSelectedIndex(projects.length - 1);
+  };
+
+  const handleAddTask = (task) => {
+    setTasks((prevTasks) => [...prevTasks, task]);
+    setSelectedIndex(tasks.length - 1);
   };
 
   return (
@@ -26,8 +32,12 @@ function App() {
 
       <section className="flex-1 border-2 border-green-300">
         <Project project={projects[selectedIndex]} />
-        <AddTask />
-        <TasksList />
+        {selectedIndex !== null && (
+          <>
+            <AddTask onAddTask={handleAddTask} />
+            <TasksList tasks={tasks} />
+          </>
+        )}
       </section>
     </div>
   );

@@ -1,4 +1,4 @@
-export default function AddTask() {
+export default function AddTask({ onAddTask }) {
   return (
     <section className="flex flex-col items-center justify-center min-h-screen">
       <div className="flex flex-col p-6 rounded-lg w-full max-w-2xl">
