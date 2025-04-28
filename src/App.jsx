@@ -49,7 +49,7 @@ export default function App() {
     }));
   };
 
-  // Selected Project
+  // Grab data from projects array
   const selectedProject = projectState.projects.find(
     (project) => project.id === projectState.selectedProjectId
   );
